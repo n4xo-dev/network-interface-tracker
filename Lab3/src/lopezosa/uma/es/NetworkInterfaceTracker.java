@@ -12,8 +12,8 @@ public class NetworkInterfaceTracker {
 	        NetworkInterface net = it.next();
 	        if(net.isUp()){
 	        	InterfaceAddress address = net.getInterfaceAddresses().get(0);	// First IP address for given interface
-	            String ip = address.getAddress().getHostAddress();				// Netmask for the previous IP
-	        	short mask = address.getNetworkPrefixLength();
+	            String ip = address.getAddress().getHostAddress();				
+	        	short mask = address.getNetworkPrefixLength();					// Netmask for the previous IP
 	        	byte[] rawIP =address.getAddress().getAddress();
 	        	
 	        	System.out.print(net.getName() + ": MAC = ");
